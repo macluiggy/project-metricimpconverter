@@ -54,5 +54,17 @@ suite("Functional Tests", function () {
           done();
         });
     });
+    test("Convert kg (no number)", (done) => {
+      chai
+        .request(server)
+        .get("/api/convert")
+        .query({ input: "kg" })
+        .end((err, res) => {
+          assert.equal(res.status, 200);
+          assert.equal(res.body.initNum, 1);
+          assert.equal(res.body.initUnit, "kg");
+          done();
+        });
+    });
   });
 });
