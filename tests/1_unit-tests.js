@@ -13,6 +13,12 @@ suite("Unit Tests", function () {
       });
       done();
     });
+    test("Unknown unit", (done) => {
+      let input = "32g";
+      assert.equal(convertHandler.getUnit(input), "invalid unit");
+      done();
+    });
+
     test("Gal to L", (done) => {
       let input = [5, "gal"];
       let expected = 18.92705;

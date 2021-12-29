@@ -7,3 +7,7 @@ var regex2 = /[^\d]+/gi;
 console.log("aaaa444fhhf55ddjfjf##".match(regex2));
 var regex3 = /[a-z]+|[^a-z]+/gi;
 console.log("aaaa444fhhf55ddjfjf##".match(regex3));
+
+let r = { error: "jeje" }["error"];
+
+console.log(r);
