@@ -3,11 +3,12 @@ function ConvertHandler() {
   this.getNum = function (input) {
     try {
       let result = input.match(regex)[0];
+      // console.log(result);
+      if (isNaN(result)) return "invalid number";
 
       return result;
     } catch (error) {
       console.log(error);
-      return "invalid number";
     }
   };
 
