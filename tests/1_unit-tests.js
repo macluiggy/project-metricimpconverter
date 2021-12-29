@@ -80,6 +80,18 @@ suite("Unit Tests", function () {
       done();
     });
   });
+  suite("Function convertHandler.getNum(input)", () => {
+    test("Whole number input", (done) => {
+      let input = "32L";
+      assert.equal(convertHandler.getNum(input), 32);
+      done();
+    });
+    test("Invalid Input (double fraction)", (done) => {
+      let input = "3/7.2/4L";
+      assert.equal(convertHandler.getNum(input), "invalid number");
+      done();
+    });
+  });
   suite("Function convertHandler.convert(num, unit)", () => {
     test("Gal to L", (done) => {
       var input = [5, "gal"];
