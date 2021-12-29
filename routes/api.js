@@ -10,8 +10,14 @@ module.exports = function (app) {
     let input = req.query.input;
     let initNum = convertHandler.getNum(input);
     let initUnit = convertHandler.getUnit(input);
+    if (initUnit == "l") {
+      initUnit = initUnit.toUpperCase();
+    }
     let returnNum = convertHandler.convert(initNum, initUnit);
     let returnUnit = convertHandler.getReturnUnit(initUnit);
+    if (returnUnit == "l") {
+      returnUnit = returnUnit.toUpperCase();
+    }
     if (initUnit === "invalid unit" && initNum === "invalid number")
       return res.json("invalid number and unit");
     if (initUnit === "invalid unit") return res.json(initUnit);

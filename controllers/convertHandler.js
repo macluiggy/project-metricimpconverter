@@ -33,7 +33,7 @@ function ConvertHandler() {
 
       let validUnits = ["gal", "l", "lbs", "kg", "mi", "km"];
       if (!validUnits.includes(result)) return "invalid unit";
-      if (result === "l") return result.toUpperCase();
+      // if (result === "l") return result.toUpperCase();
       return result;
     } catch (error) {
       console.log(error, "jdjdjjdjjdjdjjdjajajj");
@@ -45,7 +45,7 @@ function ConvertHandler() {
     try {
       let result;
       const unitToUnit = {
-        gal: "L",
+        gal: "l",
         l: "gal",
         // lbs: () => (initUnit * lbsToKg).toFixed(5),
         kg: "lbs",
